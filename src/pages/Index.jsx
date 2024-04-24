@@ -18,7 +18,7 @@ const Index = () => {
 
   const calculateDaysUntilBirthday = (date) => {
     const today = new Date();
-    const birthDate = new Date(`${date}-01`);
+    const birthDate = new Date(date);
     const nextBirthday = new Date(birthDate);
 
     nextBirthday.setFullYear(today.getFullYear());
@@ -64,8 +64,8 @@ const Index = () => {
           Fyller jag år snart?
         </Text>
         <FormControl>
-          <FormLabel htmlFor="birthdate">Enter your birth month and day:</FormLabel>
-          <Input id="birthdate" type="month" value={birthdate} onChange={handleDateChange} />
+          <FormLabel htmlFor="birthdate">Enter your birthdate:</FormLabel>
+          <Input id="birthdate" type="date" value={birthdate} onChange={handleDateChange} />
         </FormControl>
         {daysUntilBirthday !== null && (
           <Box textAlign="center">
